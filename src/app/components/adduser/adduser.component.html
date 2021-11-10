@@ -1,0 +1,109 @@
+  <app-navbar></app-navbar>
+
+<div class="main-container" id="container">
+  <div id="content" class="main-content">
+
+
+  
+<div class="container-fluid ">
+<div style="top:20px;font-size: 18px;" class="app-content content">
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">New Users</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <form class="form form-vertical" (ngSubmit)="insertUser()" ngNativeValidate>
+                                            <div class="form-body">
+                                                <div class="row">
+
+                                                  
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="text-bold-600 font-medium-2">
+                                                                Nom User
+                                                            </div>
+                                                            <input type="text"  class="form-control" [(ngModel)]="login" name="login" placeholder="name" required>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                     <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="text-bold-600 font-medium-2">
+                                                                Password User
+                                                            </div>
+                                                            <input type="password"  class="form-control" [(ngModel)]="password" name="password" placeholder="Password" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="text-bold-600 font-medium-2">
+                                                                Type User
+                                                            </div>
+                                                            <fieldset class="form-group">
+                                                                <select name="type"  [(ngModel)]="type" class="custom-select" id="customSelect" required>
+                                                                    <option value="admin">admin</option>
+                                                                    <option value="user">user</option>                                                               
+                                                                </select>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-12">
+                                                        <input type="submit" class="btn btn-primary mr-1 mb-1" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <section  class="data-thumb-view-header">                    
+                                <div class="table-responsive">
+                                    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                           <div class="card">
+                                        <table class="table ">
+                                            <thead>
+                                                <tr>                                                
+                                                    <th>Login</th>
+                                                    <th>Password</th>
+                                                    <th>Type</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody >
+                                            
+                                                <tr *ngFor="let emp of users ">
+                                                
+                                                    <td class="product-name">{{ emp.login }}</td>
+                                                    <div *ngIf="checketat(emp.etat); else etatnull">
+                                                    <td class="product-name">{{ emp.password }}</td>
+                                                    </div>
+                                                    <ng-template #etatnull>
+                                                    <td class="product-name">modifier</td>
+                                                    </ng-template>
+                                                    <td class="product-name">{{ emp.type }}</td>
+                                                    <td class="product-action">
+                                                        <a class="action-delete" (click)="deleteusers(emp.id)"><i class="fa fa-trash fa-1x" aria-hidden="true"></i></a>
+                                                    </td>
+                                                </tr>
+                                            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <br>
+       
+            </div>                     
+            </div>                     
+            </div>                     
+         

@@ -1,0 +1,70 @@
+
+<div class="container-fluid ">
+
+  <div class="invoice-00001">
+                                            <div class="content-section  animated animatedFadeInUp fadeInUp">
+ <div style="margin-left:1150px;width:100px;margin-top:20px;background-color:white;" class=" fixed-top">
+                <button  onclick="window.print()" class="btn btn-primary mb-2">Print</button>
+                <button  routerLink="../../../all-vdp" class="btn btn-warning mb-2">Retour</button>
+    </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="assets/assets/img/logo.jpg"  style="width:100px;height:100px" alt="logo">
+                                </div>
+                               
+                                <div class="col-8">
+                                                <div >
+
+                                                    <div style="margin-left:170px;margin-top:35px;">
+                                                        <h3 class="in-heading">VDP : {{vdp}} </h3>
+                                                    </div>
+                                                   
+                                                    
+                                                </div>
+
+                                               <div  >
+
+                                                   
+                                                   
+                                                    
+                                                </div>
+                                </div>
+                                
+                            </div>
+                            <br>
+                                                <div>
+                                                        <h3 class="in-heading">List des  {{name}}s</h3>
+                                                    </div>
+
+                                                <div class="row inv--product-table-section">
+                                                    <div class="col-12">
+                                                        <div class="table-responsive">
+                                                            <table class="table">
+                                                                <thead class="">
+                                                                    <tr>
+                                                                        <th ></th>
+                                                                        <th >SousType</th>
+                                                                        <th >numeserie</th>
+                                                                        <th >marque</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr *ngFor="let emp of materiels ">
+                                                                     <td></td>
+                                                                    <td>{{ emp.soustype }}</td>
+                                                                    <td>{{ emp.numserie }}</td>
+                                                                    <td>{{ emp.marque }}</td>   
+                                                                       
+                                                                    </tr>
+                                                                    
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                          
+
+                                            </div>
+                                        </div> 
+                                        </div> 

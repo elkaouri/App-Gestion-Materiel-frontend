@@ -1,0 +1,35 @@
+
+ 
+
+
+<div class="container-fluid ">
+
+  <div class="invoice-00001">
+                                            <div class="content-section  animated animatedFadeInUp fadeInUp">
+ <div style="margin-left:1150px;width:100px;margin-top:30px;background-color:white;" class=" fixed-top">
+                <button  onclick="window.print()" class="btn btn-primary mb-2">Print</button>
+                <button  routerLink="../all-vdp" class="btn btn-warning mb-2">Retour</button>
+    </div>
+                            
+                                            
+
+                                                <div class="row inv--product-table-section">
+                                                   
+                                                    <div  *ngFor="let emp of ProductQR " class="col-12 col-md-4">
+                                                        {{ affiche(emp.codeqr) }}
+                                                        <div  class="card">
+                                                            <div class="card-content">
+                                                                <div style="height:320px;" class="card-body">
+                                                                    <qrcode  [qrdata]="myAngularxQrCode"  [width]="200" [level]="'M'"></qrcode>
+                                                                    <h6>{{ emp.codeqr }}</h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                   
+
+                                          
+
+                                            </div>
+                                        </div> 
+                                        </div> 

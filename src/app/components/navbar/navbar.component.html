@@ -1,0 +1,94 @@
+ <!--  BEGIN SIDEBAR  -->
+        <div class="header-container fixed-top">
+        <header class="header navbar navbar-expand-sm"  style="background-color:black;">
+
+            <ul class="navbar-item theme-brand flex-row  text-center">
+                <li class="nav-item theme-logo">
+                    <a href="index.html">
+                        <img src="assets/assets/img/onp.png" class="navbar-logo" alt="logo">
+                    </a>
+                </li>
+                <li class="nav-item theme-text">
+                    <a href="" class="nav-link" style="font-family: Georgia, 'Times New Roman', Times, serif;"> ONP-DAKHLA </a>
+                </li>
+            </ul>
+             <ul class="navbar-item  theme-brand flex-row ml-md-auto" >
+
+                
+                     <li class="nav-item theme-text" >
+                    <a href="" class="" style="font-family: Georgia, 'Times New Roman', Times, serif;"> welcome Mr {{login}}</a>
+                    </li>
+                     
+
+                
+                
+
+            
+
+            </ul>
+           
+
+            
+        </header>
+    </div>
+        <div class="sidebar-wrapper sidebar-theme">
+            
+            <nav id="sidebar">
+                <div class="shadow-bottom"></div>
+
+                <ul class="list-unstyled menu-categories" id="accordionExample">
+                    
+					<li class="menu">
+                        <a routerLink="../home" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                                <span>Home</span>
+                            </div>
+                        </a>
+                    </li>
+					<li class="menu">
+                        <a routerLink="../all-vdp" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                                <span> Materiel</span>
+                            </div>
+                        </a>
+                    </li>
+					<li class="menu">
+                        <a routerLink="../add-materiel" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                                <span>Add materiel</span>
+                            </div>
+                        </a>
+                    </li>
+					<li  *ngIf="checktype()" class="menu">
+                        <a routerLink="../add-user" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                                <span>Add user</span>
+                            </div>
+                        </a>
+                    </li>
+					<li  *ngIf="checktype()" class="menu">
+                        <a routerLink="../add-type" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                                <span>Add type</span>
+                            </div>
+                        </a>
+                    </li>
+					<li  class="menu">
+                        <a (click)="logout()" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                                <span>log out</span>
+                            </div>
+                        </a>
+                    </li>
+                 
+                </ul>
+                
+            </nav>
+
+        </div>

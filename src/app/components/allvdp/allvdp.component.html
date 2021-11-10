@@ -1,0 +1,99 @@
+  <app-navbar></app-navbar>
+
+<div class="main-container" id="container">
+
+  <div id="content" class="main-content">
+                          <div class="row">
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="btn-group mb-4 mr-2" role="group">
+                                        <button id="btndefault" type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="margin-left:20px;"> VDP <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                                        <div class="dropdown-menu" aria-labelledby="btndefault">
+                                            <a (click)='changeVdp("all")' class="dropdown-item"><i class="flaticon-home-fill-1 mr-1"></i>All</a>
+                                            <a (click)='changeVdp("VDP-LASSARGUA")' class="dropdown-item"><i class="flaticon-home-fill-1 mr-1"></i>VDP-LASSARGUA</a>
+                                            <a (click)='changeVdp("VDP-LABOUIRDA")' class="dropdown-item"><i class="flaticon-home-fill-1 mr-1"></i>VDP-LABOUIRDA</a>
+                                            <a (click)='changeVdp("VDP-IMOUTLANE")' class="dropdown-item"><i class="flaticon-home-fill-1 mr-1"></i>VDP-IMOUTLANE</a>
+                                            <a (click)='changeVdp("VDP-NTIREFT")' class="dropdown-item"><i class="flaticon-home-fill-1 mr-1"></i>VDP-NTIREFT</a>                                                          
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                <div *ngIf="checkVdp()" class="col-lg-5">
+                                    <div class="btn-group mb-4 mr-2" role="group">
+                                        <button style="width:200px;" id="btndefault" type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Materiels <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                                        <div class="dropdown-menu" aria-labelledby="btndefault">
+                                            <a   *ngFor="let t of types" (click)='changeName(t.type)' class="dropdown-item"><i class="flaticon-home-fill-1 mr-1"></i>{{t.type}}</a>
+                                          </div>
+                                    </div>
+                                </div>
+                                 <div  *ngIf="chaeckname()" class="col-lg-3">
+                                    <button routerLink="../invoice/{{ VDP }}/{{name}}" class="btn btn-dark mb-2">Print Materiel</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-1">
+                                                </div>
+                        <div class="col-lg-5">
+                            <div class="search-bar" style="margin-right:20px;">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <button  routerLink="../Qrcodeall" class="btn btn-dark mb-2">AllQR</button>
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <input [(ngModel)]="search" (input)="searchByname()" type="text" class="form-control search-form-control  ml-lg-auto" style="height:42px;" placeholder="Search By Name...">
+                                        <input [(ngModel)]="searchcodeqr" (keyup.enter)="searchBycodeqr($event)" type="text" class="form-control search-form-control  ml-lg-auto" style="height:42px;" placeholder="Search By CodeQr...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+            <div class="layout-px-spacing">
+                
+                <div class="row layout-top-spacing">
+                
+                    <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+                        <div class="widget-content widget-content-area br-6">
+                            <div class="table-responsive mb-4 mt-4">
+                                <table id="zero-config" class="table table-hover" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>id</th>
+                                            <th>Name</th>
+                                            <th>SousType</th>
+                                            <th>numeserie</th>
+                                            <th>marque</th>
+                                            <th>vdp</th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let emp of materiels ">
+                                            <td>{{ emp.id }}</td>
+                                            <td>{{ emp.name }}</td>
+                                            <td>{{ emp.soustype }}</td>
+                                            <td>{{ emp.numserie }}</td>
+                                            <td>{{ emp.marque }}</td>
+                                            <td>{{ emp.vdp }}</td>
+                                            <td><a routerLink="../Qrcode/{{ emp.codeqr }}" ><i class="fa fa-qrcode fa-2x" aria-hidden="true"></i></a></td>
+                                            <div *ngIf="checkVdp()">
+                                            <td><a (click)="deleteMateriels(emp.id)" ><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a></td>
+                                            <td><a routerLink="../edit-materiel/{{ emp.id }}" ><i class="fa fa-pencil-square fa-2x" aria-hidden="true"></i></a></td>
+                                            </div>
+                                        </tr>
+                                    </tbody>
+                                  
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+           
+        </div>
+        </div>

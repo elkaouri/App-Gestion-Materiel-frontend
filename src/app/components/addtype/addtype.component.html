@@ -1,0 +1,103 @@
+  <app-navbar></app-navbar>
+
+<div class="main-container" id="container">
+  <div id="content" class="main-content">
+
+
+  
+<div class="container-fluid ">
+<div style="top:20px;font-size: 18px;" class="app-content content">
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">New Type</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <form class="form form-vertical" (ngSubmit)="insertType()" ngNativeValidate>
+                                            <div class="form-body">
+                                                <div class="row">
+
+                                                     <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <div class="text-bold-600 font-medium-2">
+                                                                        Type
+                                                                    </div>
+                                                                    <fieldset class="form-group">
+                                                                        <select name="existtype"  [(ngModel)]="existtype" class="custom-select" id="customSelect">
+                                                                           
+                                                                            <option  value="new" >New Type</option>
+                                                                            <option *ngFor="let t of typesselect" [value]="t.type" >{{t.type}}</option>
+                                                                                                                                      
+                                                                        </select>
+                                                                    </fieldset>
+                                                                </div>
+                                                    </div>
+                                                    <div *ngIf='existtype == "new" ' class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="text-bold-600 font-medium-2">
+                                                                Type
+                                                            </div>
+                                                            <input type="text"  class="form-control" [(ngModel)]="type.type" name="type" >
+                                                        </div>
+                                                    </div>
+                                                   
+                                                     <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="text-bold-600 font-medium-2">
+                                                                SousType
+                                                            </div>
+                                                            <input type="text"  class="form-control" [(ngModel)]="type.soustype" name="soustype" required>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    
+                                                    <div class="col-12">
+                                                        <input type="submit" class="btn btn-primary mr-1 mb-1" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <section  class="data-thumb-view-header">                    
+                                <div class="table-responsive">
+                                    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                           <div class="card">
+                                        <table class="table ">
+                                            <thead>
+                                                <tr>                                                
+                                                    <th>Type</th>
+                                                    <th>SousType</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody >
+                                            
+                                                <tr *ngFor="let t of types ">
+                                                    <td class="product-name">{{ t.type }}</td>
+                                                    <td class="product-name">{{ t.soustype }}</td>
+                                                    <td class="product-action">
+                                                        <a class="action-delete" (click)="deletetype(t.id)"><i class="fa fa-trash fa-1x" aria-hidden="true"></i></a>
+                                                    </td>
+                                                </tr>
+                                            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <br>
+       
+            </div>                     
+            </div>                     
+            </div>                     
+         

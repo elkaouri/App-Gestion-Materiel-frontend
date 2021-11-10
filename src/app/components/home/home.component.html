@@ -1,0 +1,104 @@
+  <app-navbar></app-navbar>
+  <div class="main-container" id="container">
+    <div id="content" class="main-content">
+      <div  class="app-content content">
+        <div class="row" style="margin-left: 10px;margin-right: 10px;">
+             
+       
+          <div  class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+            <div style="height: 280px;" class="widget widget-account-invoice-two">
+                <div class="widget-content">
+                    <div class="account-box">
+                            <h5 style="margin-left: 50px;padding-top: 10px;font-size: x-large"> LASSARGUA</h5>
+                            <br>
+                        <div >
+                          <div  *ngFor="let emp of statistique ">
+                            <div class="row">
+                              <div *ngIf='emp.vdp == "VDP-LASSARGUA" ' class="col-md-12 col-12">
+                              <h5  style="margin-left: 5px;padding-bottom: 10px;padding-left: 30px;color:black;font-size: medium;">{{ emp.soustype }} : {{ emp.count }}</h5>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>           
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+            <div style="height: 280px;" class="widget widget-account-invoice-two">
+                <div class="widget-content">
+                    <div class="account-box">
+                            <h5 style="margin-left: 50px;padding-top: 10px;font-size: x-large"> LABOUIRDA</h5>
+                            <br>
+                        <div >
+                          <div  *ngFor="let emp of statistique ">
+                            <div class="row">
+                              <div *ngIf='emp.vdp == "VDP-LABOUIRDA" ' class="col-md-12 col-12">
+                              <h5  style="margin-left: 5px;padding-bottom: 10px;padding-left: 30px;color:black;font-size: medium;">{{ emp.soustype }} : {{ emp.count }}</h5>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>           
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+            <div style="height: 280px;" class="widget widget-account-invoice-two">
+                <div class="widget-content">
+                    <div class="account-box">
+                            <h5 style="margin-left: 50px;padding-top: 10px;font-size: x-large"> IMOUTLANE</h5>
+                            <br>
+                        <div >
+                          <div  *ngFor="let emp of statistique ">
+                            <div class="row">
+                              <div *ngIf='emp.vdp == "VDP-IMOUTLANE" ' class="col-md-12 col-12">
+                              <h5  style="margin-left: 5px;padding-bottom: 10px;padding-left: 30px;;color:black;font-size: medium;">{{ emp.soustype }} : {{ emp.count }}</h5>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>           
+       
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+            <div  style="height: 280px;" class="widget widget-account-invoice-two">
+                <div  class="widget-content">
+                    <div class="account-box">
+                            <h5 style="margin-left: 50px;padding-top: 10px;font-size: x-large;"> NTIREFT</h5>
+                            <br>
+                        <div >
+                          <div  *ngFor="let emp of statistique ">
+                            <div class="row">
+                              <div *ngIf='emp.vdp == "VDP-NTIREFT" ' class="col-md-12 col-12">
+                              <h5  style="margin-left: 5px;padding-bottom: 10px;padding-left: 30px;;color:black;font-size: medium;">{{ emp.soustype }} : {{ emp.count }}</h5>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>           
+       
+        
+
+
+
+
+
+        </div>
+    
+    
+         
+                                </div>
+                                </div>
+                                </div>
+                              
+                               

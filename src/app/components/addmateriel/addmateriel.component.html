@@ -1,0 +1,110 @@
+  <app-navbar></app-navbar>
+
+<div class="main-container" id="container">
+  <div id="content" class="main-content">
+
+<div  class="app-content content">
+  <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+            <div class="col-md-6 col-12">
+                            <div class="card">
+                               
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <form class="form form-vertical" (ngSubmit)="insertMateriel()" ngNativeValidate>
+                                            <div class="form-body">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <div class="text-bold-600 font-medium-2">
+                                                                        Type
+                                                                    </div>
+                                                                    <fieldset class="form-group">
+                                                                        <select (change)="getSoustypes()" name="name"  [(ngModel)]="materiel.name" class="custom-select" id="customSelect" required>
+                                                                           
+                                                                            <option  *ngFor="let t of types" [value]="t.type" >{{t.type}}</option>
+                                                                                                                                      
+                                                                        </select>
+                                                                    </fieldset>
+                                                                </div>
+                                                            </div>
+                                                            <div *ngIf='materiel.name != undefined ' class="col-12">
+                                                                <div class="form-group">
+                                                                    <div class="text-bold-600 font-medium-2">
+                                                                        SousType
+                                                                    </div>
+                                                                    <fieldset class="form-group">
+                                                                        <select name="soustype"  [(ngModel)]="materiel.soustype" class="custom-select" id="customSelect" required>
+                                                                           
+                                                                            <option *ngFor="let t of soustypes" [value]="t.soustype" >{{t.soustype}}</option>
+                                                                                                                                      
+                                                                        </select>
+                                                                    </fieldset>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <label for="first-name-vertical">NUmero Serie</label>
+                                                                    <input type="text"  class="form-control"[(ngModel)]="materiel.numserie" name="numserie"  required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <label for="first-name-vertical">Marque</label>
+                                                                    <input type="text"  class="form-control"[(ngModel)]="materiel.marque" name="marque" required>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <div class="text-bold-600 font-medium-2">
+                                                                        VDP
+                                                                    </div>
+                                                                    <fieldset class="form-group">
+                                                                        <select name="vdp"  [(ngModel)]="materiel.vdp" class="custom-select" id="customSelect" required>
+                                                                            <option value="VDP-LASSARGUA">VDP-LASSARGUA</option>
+                                                                            <option value="VDP-LABOUIRDA">VDP-LABOUIRDA</option>                                                               
+                                                                            <option value="VDP-IMOUTLANE">VDP-IMOUTLANE</option>                                                               
+                                                                            <option value="VDP-NTIREFT">VDP-NTIREFT</option>                                                               
+                                                                        </select>
+                                                                    </fieldset>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  
+                                                    
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                    
+                                                    
+                                                     <div class="alert alert-success" *ngIf='message !="" ' role="alert">
+                                                        <p class="mb-0">
+                                                        {{ message }}
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <input type="submit" class="btn btn-primary mr-1 mb-1" />
+                                                        <button type="reset" routerLink="../stock" class="btn btn-outline-warning mr-1 mb-1">cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+     
+                            </div>
+                            </div>
+                            </div>
+                        
